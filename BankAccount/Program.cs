@@ -9,7 +9,6 @@ Console.WriteLine(account.Balance);
 account.MakeDeposit(100, DateTime.Now, "Friend paid me back");
 Console.WriteLine(account.Balance);
 
-// Test for a negative balance
 try
 {
     account.MakeWithdrawal(750, DateTime.Now, "Attempt to overdraw");
@@ -20,7 +19,6 @@ catch (InvalidOperationException e)
     Console.WriteLine(e.ToString());
 }
 
-// Test that the initial balance must be positive
 BankAccount invalidAccount;
 try
 {
@@ -33,5 +31,4 @@ catch (ArgumentOutOfRangeException e)
     return;
 }
 
-// Display account history
 Console.WriteLine(account.GetAccountHistory());
